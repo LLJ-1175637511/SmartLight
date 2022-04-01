@@ -1,17 +1,14 @@
-package com.android.main
+package com.android.main.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.DialogFragment
-import com.android.main.R
+import androidx.fragment.app.Fragment
 
-abstract class BaseDialog<DB : ViewDataBinding> : DialogFragment() {
+abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
 
     abstract fun getLayoutId(): Int
 
@@ -23,7 +20,6 @@ abstract class BaseDialog<DB : ViewDataBinding> : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NO_TITLE, R.style.NormalDialog)
         initCreate()
     }
 
@@ -36,16 +32,5 @@ abstract class BaseDialog<DB : ViewDataBinding> : DialogFragment() {
         initCreateView()
         return mDataBinding.root
     }
-
-    fun destroyDialog() {
-        //隐藏软键盘
-        (requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(
-            requireActivity().currentFocus?.windowToken,
-            InputMethodManager.HIDE_NOT_ALWAYS
-        )
-        this.dismiss()
-    }
-
-
 
 }

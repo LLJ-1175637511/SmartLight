@@ -6,33 +6,146 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.android.main.MainActivity">
+        android:background="@mipmap/main_bg"
+        tools:context="com.android.main.ui.MainActivity">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
-
-        <TextView
-            android:id="@+id/tv_state"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="init"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/shape_rect_white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivHead"
+                android:background="@color/common_bg"
+                android:padding="1dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:src="@mipmap/head_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="霖"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ivHead"
+                app:layout_constraintTop_toTopOf="@+id/ivHead" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/star" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_round_blue_low"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
+                android:text="灯光组"
+                android:textColor="#4F67EC"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ivHead"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_round_orange_low"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
+                android:text="最靓的仔"
+                android:textColor="#DA9939"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ivHead"
+                app:layout_constraintStart_toEndOf="@+id/textView1"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_marginTop="2dp"
+            app:tabIndicatorColor="@color/grey"
+            android:background="@color/white"
+            app:tabIndicatorFullWidth="false"
+            app:tabRippleColor="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:tabTextColor="@color/grey" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:background="@drawable/shape_rect_white"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tabLayout"
+            app:layout_constraintStart_toStartOf="@+id/tabLayout"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
         <TextView
             android:id="@+id/tv_dev_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="设备离线"
+            android:layout_margin="10dp"
+            android:text="离线"
             android:textColor="@color/red"
-            android:textSize="14sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btAllClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/shape_round_orange"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:text="一 键 关 闭"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPager" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

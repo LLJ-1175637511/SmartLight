@@ -17,7 +17,7 @@
     <color name="violet">#DC00FF</color>
     <color name="green">#69F32D</color>
     <color name="greenDark">#4FBA20</color>
-    <color name="yellow">#F0FF00</color>
+    <color name="yellow">#BFD571</color>
     <color name="deep_blue">#000DFF</color>
     <color name="volume_bg_and_normal">#080418</color>
     <color name="volume_bg_press">#231C35</color>
@@ -39,4 +39,7 @@
     <color name="grey_dark">#333232</color>
     <color name="grey">#272626</color>
     <color name="half_white">#80FFFFFF</color>
+    <color name="common_bg">#E4E1E1</color>
+    <color name="orange">#FF9800</color>
+
 </resources>
