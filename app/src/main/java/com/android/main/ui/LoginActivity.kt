@@ -15,6 +15,7 @@ class LoginActivity : IOTLoginActivity<ActivityLoginBinding>() {
         Manifest.permission.READ_EXTERNAL_STORAGE
     )
 
+
     override fun init() {
         super.init()
         mDataBinding.apply {
