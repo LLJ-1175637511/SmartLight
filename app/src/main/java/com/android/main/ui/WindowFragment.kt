@@ -1,13 +1,17 @@
 package com.android.main.ui
 
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.android.main.MainVM
 import com.android.main.R
 import com.android.main.databinding.FragmentLightBinding
 import com.android.main.databinding.FragmentWindowBinding
 
-class WindowFragment private constructor(val vm: MainVM): BaseFragment<FragmentWindowBinding>() {
+class WindowFragment private constructor(): BaseFragment<FragmentWindowBinding>() {
 
     override fun getLayoutId() = R.layout.fragment_window
+
+    private val vm by activityViewModels<MainVM>()
 
     override fun initCreateView() {
         super.initCreateView()
@@ -21,8 +25,8 @@ class WindowFragment private constructor(val vm: MainVM): BaseFragment<FragmentW
 
     companion object {
         private var instance: WindowFragment? = null
-        fun instance(vm: MainVM): WindowFragment {
-            if (instance == null) instance = WindowFragment(vm)
+        fun instance(): WindowFragment {
+            if (instance == null) instance = WindowFragment()
             return instance!!
         }
     }

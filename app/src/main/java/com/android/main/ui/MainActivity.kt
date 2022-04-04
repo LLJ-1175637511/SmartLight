@@ -14,8 +14,10 @@ import com.android.main.MainVM
 import com.android.main.R
 import com.android.main.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
+import com.llj.baselib.IOTLib
 import com.llj.baselib.IOTViewModel
 import com.llj.baselib.ui.IOTMainActivity
+import com.llj.baselib.utils.LogUtils
 import com.llj.baselib.utils.ToastUtils
 
 class MainActivity : IOTMainActivity<ActivityMainBinding>() {
@@ -78,9 +80,9 @@ class MainActivity : IOTMainActivity<ActivityMainBinding>() {
 
             override fun getItem(position: Int): Fragment {
                 when (position) {
-                    0 -> return LightFragment.instance(vm)
-                    1 -> return ScrollFragment.instance(vm)
-                    2 -> return WindowFragment.instance(vm)
+                    0 -> return LightFragment.instance()
+                    1 -> return ScrollFragment.instance()
+                    2 -> return WindowFragment.instance()
                     else -> return Fragment()
                 }
             }
@@ -110,6 +112,7 @@ class MainActivity : IOTMainActivity<ActivityMainBinding>() {
     }
 
     override fun webState(state: IOTViewModel.WebSocketType) {
+        LogUtils.d(IOTLib.TAG, "state:${state.name}")
     }
 
 }
