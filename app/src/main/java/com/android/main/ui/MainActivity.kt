@@ -28,7 +28,7 @@ class MainActivity : IOTMainActivity<ActivityMainBinding>() {
 
     override fun init() {
         super.init()
-//        vm.connect(this, MainDataBean::class.java)
+        vm.connect(this, MainDataBean::class.java)
         initMainView()
     }
 

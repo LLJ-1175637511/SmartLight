@@ -9,23 +9,23 @@ class MainVM : IOTViewModel() {
     }
 
     fun closeLight() {
-        sendOrderToDevice("A")
+        sendOrderToDevice("B")
     }
 
     fun scrollLight(num: Int) {
-        sendOrderToDevice(num.toString())
+        sendOrderToDevice("E:${num}")
     }
 
     fun openWindow() {
-        sendOrderToDevice("A")
+        sendOrderToDevice("C")
     }
 
     fun closeWindow() {
-        sendOrderToDevice("A")
+        sendOrderToDevice("D")
     }
 
     fun closeAllLight() {
-        sendOrderToDevice("A")
+        sendOrderToDevice("F")
     }
 
 
